@@ -1,8 +1,9 @@
 [project]
-name = "zippa"
-version = "0.1.2"
-description = "A Python utility for zipping directories and files"
+name = "fluency"
+version = "0.1.0"
+description = "Notes and examples from Fluent Python book"
 authors = [
+    {name = "Bob Belderbos", email = "bob@pybit.es"},
     {name = "Carlos Pumar-Frohberg", email = "cpumarfrohberg@gmail.com"}
 ]
 requires-python = ">=3.11"
@@ -10,39 +11,43 @@ readme = "README.md"
 license = "MIT"
 
 dependencies = [
-    "python-dotenv==1.1.0",
-    "pydantic>=2.6.1",
-    "typer>=0.16.0",
+    "ruff>=0.1.0",
+    "marimo>=0.15.2",
 ]
-
-[project.scripts]
-zippa = "zippa.cli:app"
 
 [dependency-groups]
 dev = [
-    "pytest>=8.4.0",
-    "pytest-cov>=6.2.1",
+    "ruff>=0.1.0",
     "pre-commit>=4.2.0",
 ]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-packages = ["zippa"]
-
-[tool.setuptools.package-data]
-"*" = ["*.py"]
-
 [tool.uv.workspace]
 members = []
 
-[tool.coverage.run]
-omit = [
-    "zippa/cli.py",
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
 ]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.isort]
+known-first-party = ["fluency"]

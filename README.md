@@ -1,94 +1,48 @@
-<h1 align="center">Automate dir zipping⚡️</h1>
-CLI for flexibly zipping and extracting items.
+# Fluent Python Notes 📚
 
-## Features
-* compress files and dirs as required
-    - run command for zipping dirs/files of choice
-    - run command for defining where compressed files should live
+Notes and examples from the **Fluent Python** book by Luciano Ramalho.
 
-## Prerequisites
-* Python 3.12+
-* Git
-* uv (recommended) or pip
+## About
 
-## Quick Start
+This repository contains personal notes, code examples, and exercises while studying Fluent Python. It's organized to help track learning progress and serve as a reference for advanced Python concepts.
 
-```bash
-# Compress current directory
-$ uv run zippa pack .
+## Setup
 
-# Compress specific files
-$ uv run zippa pack file1.txt dir1/ file2.py
+### Prerequisites
+- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (recommended) or pip
 
-# Extract zip file
-$ uv run zippa extract backup.zip
+## Structure
 
-# Extract to specific directory
-$ uv run zippa extract backup.zip --output /path/to/extract/
-```
+- `notes/` - Chapter notes and summaries
+- `examples/` - Code examples from the book
+- `exercises/` - Practice exercises and solutions
+- `notebooks/` - Marimo notebooks for interactive learning
 
-## Common Patterns
+## Learning Progress
 
-### Working with Different Directories
+- [ ] Chapter 1: The Python Data Model
+- [ ] Chapter 2: An Array of Sequences
+- [ ] Chapter 3: Dictionaries and Sets
+- [ ] Chapter 4: Text versus Bytes
+- [ ] Chapter 5: First-Class Functions
+- [ ] Chapter 6: Design Patterns with First-Class Functions
+- [ ] Chapter 7: Function Decorators and Closures
+- [ ] Chapter 8: Object References, Mutability, and Recycling
+- [ ] Chapter 9: A Pythonic Object
+- [ ] Chapter 10: Sequence Hacking, Hashing, and Slicing
+- [ ] Chapter 11: Interfaces: From Protocols to ABCs
+- [ ] Chapter 12: Inheritance: For Good or For Worse
+- [ ] Chapter 13: Operator Overloading: Doing It Right
+- [ ] Chapter 14: Iterables, Iterators, and Generators
+- [ ] Chapter 15: Context Managers and else Blocks
+- [ ] Chapter 16: Coroutines
+- [ ] Chapter 17: Concurrency with Futures
+- [ ] Chapter 18: Concurrency with asyncio
+- [ ] Chapter 19: Dynamic Attributes and Properties
+- [ ] Chapter 20: Attribute Descriptors
+- [ ] Chapter 21: Class Metaprogramming
 
-```bash
-# Compress from external directory
-$ uv run zippa pack . --work-dir ~/path/to/project --output backup.zip
+---
 
-# Compress specific files from external directory
-$ uv run zippa pack file1.txt dir1/ --work-dir ~/path/to/project
-```
-
-### Excluding Files
-
-```bash
-# Exclude patterns via command line
-$ uv run zippa pack . --exclude "*.pyc" --exclude "__pycache__"
-
-# Use .zipignore file (create in project root)
-$ uv run zippa pack . --exclude-file .zipignore
-```
-
-### Overwrite Protection
-
-```bash
-# Default: Skip if files exist (safe)
-$ uv run zippa pack . --output backup.zip
-
-# Ask before overwriting (interactive)
-$ uv run zippa pack . --output backup.zip --ask
-
-# Force overwrite (non-interactive)
-$ uv run zippa pack . --output backup.zip --force-overwrite
-```
-
-## .zipignore File
-
-Create a `.zipignore` file in your project root:
-
-```
-# .zipignore example
-*.pyc
-__pycache__/
-*.log
-*.tmp
-.git/
-node_modules/
-.env
-*.DS_Store
-build/
-dist/
-*.egg-info/
-```
-
-## Notes
-
-- Items are relative to your current working directory (or `--work-dir` if specified)
-- Output location can be anywhere (absolute or relative path)
-- Use `--help` for complete command reference
-
-
-## Future Updates
-* [ ] make syntax for running commands more intuitive
-* [ ] implement compression summary after each compression
-* [ ] listen to events and compress correspondently
+*Happy learning! 🐍*
