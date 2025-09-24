@@ -36,7 +36,3 @@ This repository contains personal notes, code examples, and exercises while stud
 - [ ] Chapter 19: Dynamic Attributes and Properties
 - [ ] Chapter 20: Attribute Descriptors
 - [ ] Chapter 21: Class Metaprogramming
-
----
-
-*Happy learning! 🐍*
