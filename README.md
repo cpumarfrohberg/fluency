@@ -6,12 +6,6 @@ Notes and examples from the **Fluent Python** book by Luciano Ramalho.
 
 This repository contains personal notes, code examples, and exercises while studying Fluent Python. It's organized to help track learning progress and serve as a reference for advanced Python concepts.
 
-## Setup
-
-### Prerequisites
-- Python 3.11+
-- [uv](https://docs.astral.sh/uv/) (recommended) or pip
-
 ## Structure
 
 - `notes/` - Chapter notes and summaries
