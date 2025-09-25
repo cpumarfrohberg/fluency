@@ -84,7 +84,7 @@ def main():
     p.add_argument(
         "--start",
         type=parse_date,
-        default=next_monday().isoformat(),
+        default=default_start.isoformat(),
         help=f"Start date (YYYY-MM-DD). Default: next Monday ({default_start.isoformat()})",
     )
     p.add_argument(
